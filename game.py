@@ -6,6 +6,23 @@ from random import randint
 # the index always starts at 0
 choices = ["rock", "paper", "scissors"]
 
+player_lives = 5
+computer_lives = 5
+
+total_lives = 5
+
+player = False; # True and False are Booleans - data types that can be truthy or falsy
+
+# set up our game loop
+while player is False:
+	# this is the player choice
+	print("===============*/ RPS /*====================")
+	print("Computer Lives:", computer_lives, "/", total_lives)
+	print("Player Lives:", player_lives, "/", total_lives)
+	print("===================================")
+	print("Choose your weapon! or type quit to exit\n")
+	player = input("Choose rock, paper or scissors: \n")
+
 # this is the player choice
 player = input("Choose rock, paper or scissors: ")
 
@@ -41,3 +58,45 @@ elif (computer == "scissors"):
 		print("you lose!")
 	else:
 		print("you win!")
+
+		if player_lives is 0:
+			print("You lost! Loser. Would you like to play again?")
+			choice = input("Y / N? ")
+
+		if choice == "Y" or choice == "y":
+			# reset the game and start over again
+			player_lives = 2
+			computer_lives = 2
+			player = False
+
+		elif choice == "N" or choice == "n":
+			# exit message and quit
+			print("You chose to quit. Better luck next time!")
+			exit()
+		else:
+			print("Make a valid choice - Y or N")
+			# this is generating a bug -> need to fix this check
+			choice = input("Y / N")
+
+	if computer_lives is 0:
+		print("You won! Winner. Would you like to play again?")
+		choice = input("Y / N? ")
+
+		if choice == "Y" or choice == "y":
+			# reset the game and start over again
+			player_lives = 2
+			computer_lives = 2
+			player = False
+
+		elif choice == "N" or choice == "n":
+			# exit message and quit
+			print("You chose to quit. Better luck next time!")
+			exit()
+		else:
+			# this is generating a bug -> need to fix this check
+			print("Make a valid choice - Y or N")
+			choice = input("Y / N")
+
+	else:
+		player = False
+		# computer = choices[randint(0,2)]
