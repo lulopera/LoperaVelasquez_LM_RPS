@@ -10,7 +10,6 @@ def winorlose(status):
 		pre_message = "You failed, loser! "
 
 	print(pre_message + "Would you like to play again?")
-	
 	choice = input("Y / N? ")
 
 	if choice == "Y" or choice == "y":
@@ -23,7 +22,7 @@ def winorlose(status):
 		
 		print("You chose to quit. Best of luck next time!")
 		exit()
+	
 	else:
 		print("Make a valid choice - Y or N")
-		
 		choice = input("Y / N")

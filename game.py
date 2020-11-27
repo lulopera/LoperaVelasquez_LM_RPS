@@ -35,30 +35,30 @@ while gameVars.player is False:
 
 
 	elif (computer == "rock"):
-		if (gameVars.player == "scissors"):
-			gameVars.player_lives -= 1
-			print("you lose!")
+		if (gameVars.player == "paper"):
+			gameVars.computer_lives -= 1
+			print("you win!")
 			
 		else:
-			print("you win!")
-			gameVars.computer_lives -= 1
+			print("you lose!")
+			gameVars.player_lives -= 1
 
 	elif (computer == "paper"):
 		if (gameVars.player == "scissors"):
-			gameVars.player_lives -= 1
-			print("you lose!")
+			gameVars.computer_lives -= 1
+			print("you win!")
 
 		else:
-			print("you win!")
-			gameVars.computer_lives -= 1
+			print("you lose!")
+			gameVars.player_lives -= 1
 
 	elif (computer == "scissors"):
 		if (gameVars.player == "rock"):
-			gameVars.player_lives -= 1
-			print("you lose!")
+			gameVars.computer_lives -= 1
+			print("you win!")
 			
 		else:
-			print("you win!")
+			print("you lose!")
 			gameVars.computer_lives -= 1
 
 
