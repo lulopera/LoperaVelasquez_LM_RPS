@@ -2,7 +2,7 @@ from gameComponents import gameVars
 
 
 def winorlose(status):
-	#print("called winorlose", status)
+	
 
 	if status == "won":
 		pre_message = "You are the greatest winner in the world! "
@@ -20,10 +20,10 @@ def winorlose(status):
 		gameVars.player = False
 
 	elif choice == "N" or choice == "n":
-		# exit message and quit
+		
 		print("You chose to quit. Best of luck next time!")
 		exit()
 	else:
 		print("Make a valid choice - Y or N")
-		# this is generating a bug -> need to fix this check
+		
 		choice = input("Y / N")
