@@ -5,7 +5,7 @@ def winorlose(status):
 	
 
 	if status == "won":
-		pre_message = "You are the greatest winner in the world! "
+		pre_message = "You won! You are the greatest winner in the world! "
 	
 	if status == "lost":
 		pre_message = "You failed, loser! "

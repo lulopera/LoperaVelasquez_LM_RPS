@@ -1,14 +1,18 @@
+from random import randint
+
 from gameComponents import gameVars, winLose
 
-def comparison(status):
+def comparison(player):
 
-	if status == "tie":
-		pre_message "It's a tie"
+	computer = gameVars.choices[randint(0, 2)]
+
+	if gameVars.player == computer:
+		print("tie")
 
 	elif (computer == "rock"):
 		if (gameVars.player == "paper"):
 			gameVars.computer_lives -= 1
-			print("you", status)
+			print("you win")
 			
 		else:
 			print("you lose!")
@@ -18,7 +22,7 @@ def comparison(status):
 	elif (computer == "paper"):
 		if (gameVars.player == "scissors"):
 			gameVars.computer_lives -= 1
-			print("you", status)
+			print("you win")
 
 		else:
 			print("you lose!")
@@ -28,7 +32,7 @@ def comparison(status):
 	elif (computer == "scissors"):
 		if (gameVars.player == "rock"):
 			gameVars.computer_lives -= 1
-			print("you", status)
+			print("you win")
 			
 		else:
 			print("you lose!")

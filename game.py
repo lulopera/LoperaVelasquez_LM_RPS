@@ -7,14 +7,20 @@ from gameComponents import gameVars, winLose, comparisonFolder
 while gameVars.player is False:
 
 	
-	print("===============*/ RPS /*====================")
+	print("*©•©*©•©*©•©*©*©•©*©•/ Rock|Paper|Scissors /*©•©*©•©*©•©*©•©*©•©\n")
+
 	print("Computer Lives:", gameVars.computer_lives, "/", gameVars.total_lives)
-	print("Player Lives:", gameVars.player_lives, "/", gameVars.total_lives)
-	print("===================================")
+	print("Player Lives:", gameVars.player_lives, "/", gameVars.total_lives, "\n")
+
+	print("                    *©•©*©•©*©•©*©•©*©*©*©*\n")
+
+	print("                             ~~~~~ ")
+	print("                           <( ©•© )> ")
+	print("                               -   \n")
+
 	print("Choose your weapon! or type quit to exit\n")
 	
 	
-
 	gameVars.player = input("Choose rock, paper or scissors: \n")
 
 	if gameVars.player == "quit":
@@ -22,30 +28,31 @@ while gameVars.player is False:
 		exit()
 
 
-
 	computer = gameVars.choices[randint(0, 2)]
+
 
 	print("user chose: " + gameVars.player)
 
 
 	print("AI chose: " + computer)
 
-	if (computer == gameVars.player):
+
+	if gameVars.player == computer:
 		comparisonFolder.comparison("tie")
 
-	elif computer == gameVars.computer_lives - 1:
-		comparisonFolder.comparison("win")
+	elif gameVars.player == gameVars.player_lives - 1:
+		comparisonFolder.comparison("you lose")
 
-	elif computer == gameVars.player_lives - 1:
-		 comparisonFolder.comparison("lose")
+	else:
+		comparisonFolder.comparison("you win")
+	
 
 
-
-	if gameVars.computer_lives is 0:
+	if gameVars.computer_lives == 0:
 		winLose.winorlose("won")
 
 
-	elif gameVars.player_lives is 0:
+	elif gameVars.player_lives == 0:
 		winLose.winorlose("lost")
 
 	print("Player has:", gameVars.player_lives, "lives left")
