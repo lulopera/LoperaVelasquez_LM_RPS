@@ -6,7 +6,8 @@ def winorlose(status):
 
 	if status == "won":
 		pre_message = "You are the greatest winner in the world! "
-	else:
+	
+	if status == "lost":
 		pre_message = "You failed, loser! "
 
 	print(pre_message + "Would you like to play again?")
@@ -26,3 +27,10 @@ def winorlose(status):
 	else:
 		print("Make a valid choice - Y or N")
 		choice = input("Y / N")
+
+
+		if choice == "Y" or choice == "y":
+
+			gameVars.player_lives = 5
+			gameVars.computer_lives = 5
+			gameVars.player = False

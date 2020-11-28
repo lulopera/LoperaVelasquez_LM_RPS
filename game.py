@@ -1,6 +1,6 @@
 from random import randint
 
-from gameComponents import gameVars, winLose
+from gameComponents import gameVars, winLose, comparisonFolder
 
 
 
@@ -31,43 +31,22 @@ while gameVars.player is False:
 	print("AI chose: " + computer)
 
 	if (computer == gameVars.player):
-		print("tie")
+		comparisonFolder.comparison("tie")
+
+	elif computer == gameVars.computer_lives - 1:
+		comparisonFolder.comparison("win")
+
+	elif computer == gameVars.player_lives - 1:
+		 comparisonFolder.comparison("lose")
 
 
-	elif (computer == "rock"):
-		if (gameVars.player == "paper"):
-			gameVars.computer_lives -= 1
-			print("you win!")
-			
-		else:
-			print("you lose!")
-			gameVars.player_lives -= 1
 
-	elif (computer == "paper"):
-		if (gameVars.player == "scissors"):
-			gameVars.computer_lives -= 1
-			print("you win!")
-
-		else:
-			print("you lose!")
-			gameVars.player_lives -= 1
-
-	elif (computer == "scissors"):
-		if (gameVars.player == "rock"):
-			gameVars.computer_lives -= 1
-			print("you win!")
-			
-		else:
-			print("you lose!")
-			gameVars.computer_lives -= 1
-
-
-	if gameVars.player_lives is 0:
-		winLose.winorlose("lost")
-
-	elif gameVars.computer_lives is 0:
+	if gameVars.computer_lives is 0:
 		winLose.winorlose("won")
 
+
+	elif gameVars.player_lives is 0:
+		winLose.winorlose("lost")
 
 	print("Player has:", gameVars.player_lives, "lives left")
 	print("computer has:", gameVars.computer_lives, "lives left")
